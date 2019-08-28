@@ -45,9 +45,9 @@ void runGame() {
   fill(255);
   textSize(width/50);
   textAlign(LEFT, TOP);
-  text("SCORE: "+score, 0, 0);
+  text("SCORE: "+score, 5, 0);
   textAlign(RIGHT, TOP);
-  text("LIVES: "+lives, width, 0);
+  text("LIVES: "+lives, width-5, 0);
 }
 
 void gameOver() {
