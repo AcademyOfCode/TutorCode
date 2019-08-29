@@ -5,7 +5,7 @@ AudioPlayer track;
 AudioMetaData info;
 
 int trackNumber = 1;
-int total = 10;
+int total = 5;
 float volume = 100;
 boolean paused = false;
 
@@ -13,7 +13,7 @@ void setup() {
   size(2000, 1000);
   background(255);
   minim = new Minim (this);
-  track = minim.loadFile("Track "+trackNumber+".mp3");
+  track = minim.loadFile(sketchPath("").substring(0, sketchPath("").length()-12)+"data/Track"+trackNumber+".mp3");
   track.setGain(map(volume, 0, 100, -80, 0));
   track.play();
   printInfo();
@@ -24,7 +24,7 @@ void draw() {
     println("Next Song!");
     track.pause();
     trackNumber = 1 + trackNumber % total;
-    track = minim.loadFile("Track "+trackNumber+".mp3");
+    track = minim.loadFile(sketchPath("").substring(0, sketchPath("").length()-12)+"data/Track"+trackNumber+".mp3");
     track.setGain(map(volume, 0, 100, -80, 0));
     track.play();
     printInfo();
@@ -35,7 +35,7 @@ void keyReleased() {
   if (keyCode == RIGHT) {
     track.pause();
     trackNumber = 1 + trackNumber % total;
-    track = minim.loadFile("Track "+trackNumber+".mp3");
+    track = minim.loadFile(sketchPath("").substring(0, sketchPath("").length()-12)+"data/Track"+trackNumber+".mp3");
     track.setGain(map(volume, 0, 100, -80, 0));
     track.play();
     printInfo();
@@ -47,7 +47,7 @@ void keyReleased() {
     } else {
       trackNumber--;
     }
-    track = minim.loadFile("Track "+trackNumber+".mp3");
+    track = minim.loadFile(sketchPath("").substring(0, sketchPath("").length()-12)+"data/Track"+trackNumber+".mp3");
     track.setGain(map(volume, 0, 100, -80, 0));
     track.play();
     printInfo();

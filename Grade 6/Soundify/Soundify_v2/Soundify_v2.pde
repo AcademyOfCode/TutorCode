@@ -5,8 +5,8 @@ Minim minim;
 AudioPlayer track;
 AudioMetaData info;
 
-int trackNumber = 6;
-int total = 10;
+int trackNumber = 1;
+int total = 5;
 float volume = 50;
 boolean paused = false;
 boolean muted = false;
@@ -43,7 +43,7 @@ Rectangle shuffle;
 void setup() {
   size(2000, 1000);
   minim = new Minim (this);
-  track = minim.loadFile("Track "+trackNumber+".mp3");
+  track = minim.loadFile(sketchPath("").substring(0, sketchPath("").length()-12)+"data/Track"+trackNumber+".mp3");
   track.setGain(map(volume, 0, 100, -40, 10));
   track.play();
   printInfo();
@@ -108,7 +108,7 @@ void draw() {
     } else {
       trackNumber = (int)random(1, total+1);
     }
-    track = minim.loadFile("Track "+trackNumber+".mp3");
+    track = minim.loadFile(sketchPath("").substring(0, sketchPath("").length()-12)+"data/Track"+trackNumber+".mp3");
     track.setGain(map(volume, 0, 100, -40, 10));
     track.play();
     printInfo();
@@ -143,7 +143,7 @@ void mouseClicked() {
     } else {
       trackNumber = (int)random(1, total+1);
     }
-    track = minim.loadFile("Track "+trackNumber+".mp3");
+    track = minim.loadFile(sketchPath("").substring(0, sketchPath("").length()-12)+"data/Track"+trackNumber+".mp3");
     track.setGain(map(volume, 0, 100, -40, 10));
     track.play();
     printInfo();
@@ -160,7 +160,7 @@ void mouseClicked() {
     } else {
       trackNumber = (int)random(1, total+1);
     }
-    track = minim.loadFile("Track "+trackNumber+".mp3");
+    track = minim.loadFile(sketchPath("").substring(0, sketchPath("").length()-12)+"data/Track"+trackNumber+".mp3");
     track.setGain(map(volume, 0, 100, -40, 10));
     track.play();
     printInfo();
