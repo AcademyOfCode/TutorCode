@@ -12,7 +12,7 @@ boolean paused = false;
 void setup() {
   size(2000, 1000);
   background(255);
-  minim = new Minim (this);
+  minim = new Minim(this);
   track = minim.loadFile(sketchPath("").substring(0, sketchPath("").length()-12)+"data/Track"+trackNumber+".mp3");
   track.setGain(map(volume, 0, 100, -80, 0));
   track.play();
@@ -88,7 +88,7 @@ void printInfo() {
   println("Playing Track "+trackNumber);
   println("Title: "+info.title());
   println("Author: "+info.author());
-  println("Length: "+lengthConversion(track.length()));
+  println("Length: "+(track.length()/60000)%60+":"+(track.length()/1000)%60);
 }
 
 String lengthConversion(int MS) {

@@ -62,6 +62,8 @@ void drawUI() {
 void collision() {
   for (int i=0; i<bugs.size(); i++) {
     bugs.get(i).run();
+  }
+  for (int i=bugs.size()-1; i>=0; i--) {
     if (bugs.get(i).collide()) {
       score += bugs.get(i).getWorth();
       lives += bugs.get(i).getImpact();

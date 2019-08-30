@@ -220,7 +220,7 @@ String lengthConversion(int MS) {
 void runUI() {
   fill(50);
   rect(0, 800, width, height);
-  image(logo, 10, 10);
+  //image(logo, 10, 10);
   progressBar();
   volumeBar();
   playButton();
